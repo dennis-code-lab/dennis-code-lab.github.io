@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* HERO */
+.hero {
+  background-color: #4b3621;
+  color: #f5f5dc;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+/* PROJECT CARD */
+.project-card {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.project-card ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5dc;
+}
