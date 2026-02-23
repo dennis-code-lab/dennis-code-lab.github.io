@@ -1,49 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dennis Ochieng | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO / INTRO -->
-  <header class="hero">
-    <h1>Dennis Ochieng</h1>
-    <p>Beginner Web Developer</p>
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav">
+      <h1 class="logo">Dennis</h1>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ABOUT ME -->
-  <section class="about">
+  <!-- ABOUT -->
+  <section class="about" id="about">
     <h2>About Me</h2>
-    <p>I’m a beginner web developer learning HTML, CSS, and JavaScript. I enjoy building clean, simple websites and improving my skills through hands-on projects.</p>
+    <p>
+      I’m a beginner web developer learning HTML, CSS, and JavaScript.
+      I enjoy building clean, simple websites and improving my skills
+      through hands-on projects.
+    </p>
   </section>
 
-  <section class="projects">
-  <h2>Projects</h2>
-  <p class="section-intro">
-    Here are some projects I’ve built while learning web development.
-  </p>
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <p class="section-intro">
+      Here are some projects I’ve built while learning web development.
+    </p>
 
-  <div class="project-card">
-      <h3>Brew Haven Coffee Shop</h3>
-      <p>A responsive single-page website for a coffee shop.</p>
-      <ul>
-        <li>Built with semantic HTML & CSS</li>
-        <li>Responsive layout using Flexbox</li>
-        <li>Deployed with GitHub Pages</li>
-      </ul>
-      <a href="https://dennis-code-lab.github.io/brew-haven/" target="_blank">Live Site</a> |
-      <a href="https://github.com/dennis-code-lab/brew-haven" target="_blank">GitHub Repo</a>
+    <div class="project-grid">
+
+      <!-- Brew Haven -->
+      <div class="project-card">
+        <h3>Brew Haven Coffee Shop</h3>
+        <p>A responsive single-page website for a coffee shop.</p>
+        <ul>
+          <li>Built with semantic HTML & CSS</li>
+          <li>Responsive layout using Flexbox</li>
+          <li>Deployed with GitHub Pages</li>
+        </ul>
+        <a href="https://dennis-code-lab.github.io/brew-haven/" target="_blank">Live Site</a> |
+        <a href="https://github.com/dennis-code-lab/brew-haven" target="_blank">GitHub Repo</a>
+      </div>
+
+      <!-- IronCore Fitness -->
+      <div class="project-card">
+        <h3>IronCore Fitness Gym</h3>
+        <p>
+          A bold, motivating website for a modern gym, highlighting
+          programs, pricing, and membership options.
+        </p>
+        <ul>
+          <li>Built with HTML & CSS</li>
+          <li>Responsive layout using Flexbox</li>
+          <li>Clean, modern design with strong color accents</li>
+          <li>Deployed via GitHub Pages</li>
+        </ul>
+        <a href="https://dennis-code-lab.github.io/ironcore-fitness/" target="_blank">Live Site</a> |
+        <a href="https://github.com/dennis-code-lab/ironcore-fitness" target="_blank">GitHub Repo</a>
+      </div>
+
     </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Email: dennisochieng652@gmail.com</p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Your Name</p>
+    <p>© <span id="year"></span> Dennis Ochieng</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
