@@ -79,14 +79,32 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Email: dennisochieng652@gmail.com</p>
-  </section>
+  <h2>Contact</h2>
+  <p>Feel free to send me a message:</p>
+
+  <form id="contactForm" action="https://formspree.io/f/xbdaqjzb" method="POST" target="_blank">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="_replyto" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© <span id="year"></span> Dennis Ochieng</p>
-  </footer>
+  <p>© <span id="year"></span> Dennis Ochieng</p>
+  <div class="social-links">
+    <a href="https://github.com/dennis-code-lab" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">LinkedIn</a> |
+    <a href="mailto:dennisochieng652@gmail.com">Email</a>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>
