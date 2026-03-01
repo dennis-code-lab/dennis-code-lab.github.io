@@ -3,130 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dennis Ochieng | Portfolio</title>
+  <title>Expense Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER / NAVIGATION -->
-  <header class="site-header">
-    <nav class="nav">
-      <h1 class="logo">Dennis</h1>
+  <div class="app">
+    <h1>Expense Tracker</h1>
 
-      <!-- Mobile menu button -->
-      <button class="menu-toggle" id="menuToggle">☰</button>
+    <!-- FORM -->
+    <form id="expenseForm">
+      <input 
+        type="text" 
+        id="expenseName" 
+        placeholder="Expense name" 
+        required 
+      />
 
-      <!-- Navigation links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+      <input 
+        type="number" 
+        id="expenseAmount" 
+        placeholder="Amount" 
+        required 
+      />
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a beginner web developer learning HTML, CSS, and JavaScript.
-      I enjoy building clean, simple websites and improving my skills
-      through hands-on projects.
-    </p>
-  </section>
+      <button type="submit">Add Expense</button>
+    </form>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <p class="section-intro">
-      Here are some projects I’ve built while learning web development.
-    </p>
+    <!-- TOTAL -->
+    <h2>Total: $<span id="totalAmount">0</span></h2>
 
-    <div class="project-grid">
-      <div class="project-card">
-  <h3>JavaScript To-Do App</h3>
-  <p>A simple task manager built with vanilla JavaScript and localStorage.</p>
-  <ul>
-    <li>Add, complete, and delete tasks</li>
-    <li>Data persists using localStorage</li>
-    <li>Clean, responsive UI</li>
-  </ul>
-  <a href="https://dennis-code-lab.github.io/todo-app/" target="_blank">Live Site</a> |
-  <a href="https://github.com/dennis-code-lab/todo-app" target="_blank">GitHub Repo</a>
-</div>
-<div class="project-card">
-  <h3>Weather App</h3>
-  <p>A real-time weather application that fetches live data from an external API.</p>
-  <ul>
-    <li>Built with HTML, CSS & JavaScript</li>
-    <li>Uses OpenWeather API</li>
-    <li>Async/await & error handling</li>
-  </ul>
-  <a href="https://dennis-code-lab.github.io/weather-app/" target="_blank">Live Site</a> |
-  <a href="https://github.com/dennis-code-lab/weather-app" target="_blank">GitHub Repo</a>
-</div>
-
-      <!-- Brew Haven -->
-      <div class="project-card">
-        <h3>Brew Haven Coffee Shop</h3>
-        <p>A responsive single-page website for a coffee shop.</p>
-        <ul>
-          <li>Built with semantic HTML & CSS</li>
-          <li>Responsive layout using Flexbox</li>
-          <li>Deployed with GitHub Pages</li>
-        </ul>
-        <a href="https://dennis-code-lab.github.io/brew-haven/" target="_blank">Live Site</a> |
-        <a href="https://github.com/dennis-code-lab/brew-haven" target="_blank">GitHub Repo</a>
-      </div>
-
-      <!-- IronCore Fitness -->
-      <div class="project-card">
-        <h3>IronCore Fitness Gym</h3>
-        <p>
-          A bold, motivating website for a modern gym, highlighting
-          programs, pricing, and membership options.
-        </p>
-        <ul>
-          <li>Built with HTML & CSS</li>
-          <li>Responsive layout using Flexbox</li>
-          <li>Clean, modern design with strong color accents</li>
-          <li>Deployed via GitHub Pages</li>
-        </ul>
-        <a href="https://dennis-code-lab.github.io/ironcore-fitness/" target="_blank">Live Site</a> |
-        <a href="https://github.com/dennis-code-lab/ironcore-fitness" target="_blank">GitHub Repo</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-  <h2>Contact</h2>
-  <p>Feel free to send me a message:</p>
-
-  <form id="contactForm" action="https://formspree.io/f/xbdaqjzb" method="POST" target="_blank">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required />
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="_replyto" required />
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-  <p>© <span id="year"></span> Dennis Ochieng</p>
-  <div class="social-links">
-    <a href="https://github.com/dennis-code-lab" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">LinkedIn</a> |
-    <a href="mailto:dennisochieng652@gmail.com">Email</a>
+    <!-- EXPENSE LIST -->
+    <ul id="expenseList"></ul>
   </div>
-</footer>
 
   <script src="script.js"></script>
 </body>
