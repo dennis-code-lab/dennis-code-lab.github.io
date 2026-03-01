@@ -1,84 +1,39 @@
-// Elements
-const expenseForm = document.getElementById("expenseForm");
-const expenseName = document.getElementById("expenseName");
-const expenseAmount = document.getElementById("expenseAmount");
-const expenseList = document.getElementById("expenseList");
-const totalAmount = document.getElementById("totalAmount");
+// Smooth scrolling for anchor links
+const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
-// State
-let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-let total = 0;
+scrollLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
 
-// Load saved expenses on page load
-window.addEventListener("DOMContentLoaded", loadExpenses);
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
 
-// Form submit
-expenseForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = expenseName.value.trim();
-  const amount = Number(expenseAmount.value);
-
-  if (name === "" || amount <= 0) {
-    alert("Please enter a valid expense");
-    return;
-  }
-
-  const expense = { name, amount };
-
-  expenses.push(expense);
-  saveExpenses();
-
-  addExpenseToDOM(expense);
-  updateTotal(amount);
-
-  expenseName.value = "";
-  expenseAmount.value = "";
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
 });
 
-// Load expenses
-function loadExpenses() {
-  expenseList.innerHTML = "";
-  total = 0;
+// Mobile menu toggle
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navLinks");
 
-  expenses.forEach(expense => {
-    addExpenseToDOM(expense);
-    total += expense.amount;
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+// Auto-close mobile menu when a link is clicked
+const navLinkItems = document.querySelectorAll('.nav-links a');
+
+navLinkItems.forEach(link => {
+  link.addEventListener('click', () => {
+    // Remove 'active' class only if menu is open
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
   });
-
-  totalAmount.textContent = total.toFixed(2);
-}
-
-// Add expense to DOM
-function addExpenseToDOM(expense) {
-  const li = document.createElement("li");
-  li.classList.add("expense-item");
-
-  const span = document.createElement("span");
-  span.textContent = `${expense.name}: $${expense.amount.toFixed(2)}`;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "✖";
-  deleteBtn.classList.add("delete-btn");
-
-  deleteBtn.addEventListener("click", () => {
-    expenses = expenses.filter(e => e !== expense);
-    saveExpenses();
-    loadExpenses();
-  });
-
-  li.appendChild(span);
-  li.appendChild(deleteBtn);
-  expenseList.appendChild(li);
-}
-
-// Save to localStorage
-function saveExpenses() {
-  localStorage.setItem("expenses", JSON.stringify(expenses));
-}
-
-// Update total
-function updateTotal(amount) {
-  total += amount;
-  totalAmount.textContent = total.toFixed(2);
-}
+});
+// Set current year in footer
+const yearSpan = document.getElementById('year');
+yearSpan.textContent = new Date().getFullYear();

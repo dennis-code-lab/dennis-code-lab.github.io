@@ -3,39 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Expense Tracker</title>
+  <title>Dennis Ochieng | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="app">
-    <h1>Expense Tracker</h1>
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav">
+      <h1 class="logo">Dennis</h1>
 
-    <!-- FORM -->
-    <form id="expenseForm">
-      <input 
-        type="text" 
-        id="expenseName" 
-        placeholder="Expense name" 
-        required 
-      />
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" id="menuToggle">☰</button>
 
-      <input 
-        type="number" 
-        id="expenseAmount" 
-        placeholder="Amount" 
-        required 
-      />
+      <!-- Navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <button type="submit">Add Expense</button>
-    </form>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a junior frontend developer focused on building clean, responsive, and user-friendly web applications.
+    I enjoy turning ideas into real projects using HTML, CSS, and JavaScript, and I’m continuously improving
+    my skills by building and deploying real-world apps.
+  </p>
+</section>
 
-    <!-- TOTAL -->
-    <h2>Total: $<span id="totalAmount">0</span></h2>
+  <!-- PROJECTS -->
+<section class="projects" id="projects">
+  <h2>Projects</h2>
+  <p class="section-intro">
+    Here are some projects I’ve built while learning web development.
+  </p>
 
-    <!-- EXPENSE LIST -->
-    <ul id="expenseList"></ul>
+  <div class="project-grid">
+
+    <!-- JavaScript To-Do App -->
+    <div class="project-card">
+      <h3>JavaScript To-Do App</h3>
+      <p>A simple task manager built with vanilla JavaScript and localStorage.</p>
+      <ul>
+        <li>Add, complete, and delete tasks</li>
+        <li>Data persists using localStorage</li>
+        <li>Clean, responsive UI</li>
+      </ul>
+      <a href="https://dennis-code-lab.github.io/todo-app/" target="_blank">Live Site</a> |
+      <a href="https://github.com/dennis-code-lab/todo-app" target="_blank">GitHub Repo</a>
+    </div>
+
+    <!-- Weather App -->
+    <div class="project-card">
+      <h3>Weather App</h3>
+      <p>A real-time weather application that fetches live data from an external API.</p>
+      <ul>
+        <li>Built with HTML, CSS & JavaScript</li>
+        <li>Uses OpenWeather API</li>
+        <li>Async/await & error handling</li>
+        <li>Dynamic weather icons and keyboard interaction</li>
+      </ul>
+      <a href="https://dennis-code-lab.github.io/weather-app/" target="_blank">Live Site</a> |
+      <a href="https://github.com/dennis-code-lab/weather-app" target="_blank">GitHub Repo</a>
+    </div>
+
+    <!-- Brew Haven Coffee Shop -->
+    <div class="project-card">
+      <h3>Brew Haven Coffee Shop</h3>
+      <p>A responsive single-page website for a coffee shop, designed to showcase products and brand identity.</p>
+      <ul>
+        <li>Built with semantic HTML & modern CSS</li>
+        <li>Responsive layout for mobile and desktop</li>
+        <li>Clean UI with consistent spacing and typography</li>
+      </ul>
+      <a href="https://dennis-code-lab.github.io/brew-haven/" target="_blank">Live Site</a> |
+      <a href="https://github.com/dennis-code-lab/brew-haven" target="_blank">GitHub Repo</a>
+    </div>
+
+    <!-- IronCore Fitness Gym -->
+    <div class="project-card">
+      <h3>IronCore Fitness Gym</h3>
+      <p>A modern gym website focused on memberships, programs, and motivation for fitness enthusiasts.</p>
+      <ul>
+        <li>Responsive layout using Flexbox</li>
+        <li>Structured sections for programs and pricing</li>
+        <li>Bold design with strong visual hierarchy</li>
+        <li>Deployed via GitHub Pages</li>
+      </ul>
+      <a href="https://dennis-code-lab.github.io/ironcore-fitness/" target="_blank">Live Site</a> |
+      <a href="https://github.com/dennis-code-lab/ironcore-fitness" target="_blank">GitHub Repo</a>
+    </div>
+
   </div>
+</section>
+
+<div class="project-card">
+  <h3>Expense Tracker</h3>
+  <p>A JavaScript app for tracking daily expenses with data persistence.</p>
+  <ul>
+    <li>Add and delete expenses</li>
+    <li>Automatically updates total</li>
+    <li>Data saved using localStorage</li>
+  </ul>
+  <a href="https://dennis-code-lab.github.io/expense-tracker/" target="_blank">Live Site</a> |
+  <a href="https://github.com/dennis-code-lab/expense-tracker" target="_blank">GitHub Repo</a>
+</div>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <h2>Skills</h2>
+  <p class="section-intro">
+    Here are the technologies and tools I use to build responsive and interactive web applications.
+  </p>
+  <div class="skills-grid">
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">JavaScript (ES6+)</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Responsive Design</div>
+    <div class="skill">API Integration</div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>Feel free to send me a message:</p>
+
+  <form id="contactForm" action="https://formspree.io/f/xbdaqjzb" method="POST" target="_blank">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="_replyto" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <p>© <span id="year"></span> Dennis Ochieng</p>
+  <div class="social-links">
+    <a href="https://github.com/dennis-code-lab" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">LinkedIn</a> |
+    <a href="mailto:dennisochieng652@gmail.com">Email</a>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>
